@@ -1,0 +1,145 @@
+{
+  "name": "depsview",
+  "displayName": "DepsView",
+  "description": "Real-time dependency graph for your codebase",
+  "version": "0.2.0",
+  "publisher": "depsview",
+  "license": "MIT",
+  "icon": "media/icon.png",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jo050493/DepsView"
+  },
+  "keywords": [
+    "dependencies",
+    "graph",
+    "architecture",
+    "visualization",
+    "imports",
+    "typescript",
+    "javascript",
+    "python",
+    "go"
+  ],
+  "galleryBanner": {
+    "color": "#0a0e17",
+    "theme": "dark"
+  },
+  "engines": {
+    "vscode": "^1.95.0"
+  },
+  "categories": [
+    "Visualization",
+    "Linters",
+    "Other"
+  ],
+  "main": "./dist/extension.js",
+  "bin": {
+    "depsview": "./dist/cli.js",
+    "depsview-mcp": "./dist/mcp.js"
+  },
+  "activationEvents": [],
+  "contributes": {
+    "commands": [
+      {
+        "command": "depsview.scan",
+        "title": "DepsView: Scan Project"
+      },
+      {
+        "command": "depsview.showGraph",
+        "title": "DepsView: Show Dependency Graph"
+      },
+      {
+        "command": "depsview.generateReport",
+        "title": "DepsView: Generate Health Report"
+      },
+      {
+        "command": "depsview.openBrowser",
+        "title": "DepsView: Open in Browser"
+      },
+      {
+        "command": "depsview.openConfig",
+        "title": "DepsView: Open Configuration"
+      },
+      {
+        "command": "depsview.focusCurrentFile",
+        "title": "DepsView: Focus Current File in Graph"
+      }
+    ],
+    "configuration": {
+      "title": "DepsView",
+      "properties": {
+        "depsview.entryPointPatterns": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "default": [],
+          "description": "Custom regex patterns for files that should not be flagged as orphans (e.g. [\"\\.seed\\\\.\\\\w+$\", \"(?:^|/)scripts/\"]). These are additive to the built-in exclusion patterns."
+        },
+        "depsview.couplingThreshold": {
+          "type": "number",
+          "default": 8,
+          "description": "Number of total connections (in + out) above which a file is flagged for excessive coupling."
+        },
+        "depsview.diagnostics": {
+          "type": "object",
+          "default": {
+            "orphan": "hint",
+            "cycle": "error",
+            "phantom": "error",
+            "shadow": "warning",
+            "coupling": "hint"
+          },
+          "description": "Diagnostic severity per issue type. Values: error, warning, hint, off. Use 'hint' for subtle indicators, 'off' to disable."
+        }
+      }
+    }
+  },
+  "scripts": {
+    "build": "node esbuild.config.mjs",
+    "watch": "node esbuild.config.mjs --watch",
+    "test": "vitest run",
+    "test:watch": "vitest",
+    "package": "vsce package"
+  },
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.27.1",
+    "@xyflow/react": "^12.10.1",
+    "commander": "^12.1.0",
+    "d3-force": "^3.0.0",
+    "express": "^5.2.1",
+    "fast-glob": "^3.3.3",
+    "graphology": "^0.25.4",
+    "graphology-dag": "^0.4.1",
+    "graphology-traversal": "^0.3.1",
+    "graphology-types": "^0.24.7",
+    "html-to-image": "^1.11.13",
+    "react": "^19.2.4",
+    "react-dom": "^19.2.4",
+    "web-tree-sitter": "^0.25.10",
+    "ws": "^8.19.0",
+    "zod": "^4.3.6"
+  },
+  "devDependencies": {
+    "@dagrejs/dagre": "^2.0.4",
+    "@types/d3-force": "^3.0.10",
+    "@types/express": "^5.0.6",
+    "@types/node": "^20.17.0",
+    "@types/react": "^19.2.14",
+    "@types/react-dom": "^19.2.3",
+    "@types/vscode": "^1.95.0",
+    "@types/ws": "^8.18.1",
+    "@vscode/tree-sitter-wasm": "^0.3.0",
+    "esbuild": "^0.24.0",
+    "esbuild-plugin-copy": "^2.1.1",
+    "tree-sitter-cli": "^0.26.7",
+    "tree-sitter-go": "^0.25.0",
+    "tree-sitter-javascript": "^0.25.0",
+    "tree-sitter-python": "^0.25.0",
+    "tree-sitter-typescript": "^0.23.2",
+    "tsx": "^4.21.0",
+    "typescript": "^5.7.0",
+    "vitest": "^2.1.0"
+  }
+}
