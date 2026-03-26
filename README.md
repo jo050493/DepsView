@@ -171,6 +171,14 @@ VS Code settings (`settings.json`):
 
 ---
 
+## What's next
+
+DepsView is actively maintained. Upcoming features include minimap overview, color legend, zoom-to-cluster, enhanced search, disk caching, and support for more languages.
+
+Feature requests and ideas are welcome — [open an issue](https://github.com/jo050493/DepsView/issues).
+
+---
+
 ## License
 
 MIT
