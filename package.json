@@ -2,7 +2,7 @@
   "name": "depsview",
   "displayName": "DepsView",
   "description": "Real-time dependency graph for your codebase",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "publisher": "depsview",
   "license": "MIT",
   "icon": "media/icon.png",
