@@ -3,7 +3,7 @@
 **Real-time dependency graph for your codebase.**
 See your architecture, detect issues, and understand impact — at a glance.
 
-![DepsView — collapsed view](media/readme/collapsed.png)
+![DepsView — collapsed view](https://raw.githubusercontent.com/jo050493/DepsView/master/media/readme/collapsed.png)
 
 ---
 
@@ -22,19 +22,19 @@ DepsView gives you a **live architectural map** that updates in real-time as fil
 ### Live dependency graph
 Interactive graph with hierarchical clustering. Files grouped by folder, colored by category (component, hook, service, page, util, config, test). Edges appear on hover — clean view by default.
 
-![Hover — edges appear on mouseover](media/readme/hover.png)
+![Hover — edges appear on mouseover](https://raw.githubusercontent.com/jo050493/DepsView/master/media/readme/hover.png)
 
 ### Expand all
 Unfold every cluster to see all files at once. Full inventory of your project.
 
-![Expanded view — all files visible](media/readme/expand%20all.png)
+![Expanded view — all files visible](https://raw.githubusercontent.com/jo050493/DepsView/master/media/readme/expand%20all.png)
 
 ### Focus mode
 Click any file or folder to isolate its connections. Toggle depth 1 (direct) or depth 2 (indirect). Everything else fades. Press Esc to exit.
 
 | Depth 1 — direct connections | Depth 2 — indirect connections |
 |:---:|:---:|
-| ![Focus depth 1](media/readme/focus%201.png) | ![Focus depth 2](media/readme/focus%202.png) |
+| ![Focus depth 1](https://raw.githubusercontent.com/jo050493/DepsView/master/media/readme/focus%201.png) | ![Focus depth 2](https://raw.githubusercontent.com/jo050493/DepsView/master/media/readme/focus%202.png) |
 
 ### Real-time heatmap
 Recently modified files pulse with heat animations. See what the AI is touching right now.
