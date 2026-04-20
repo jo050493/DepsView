@@ -2,6 +2,7 @@
 
 **Real-time dependency graph for your codebase.**
 See your architecture, detect issues, and understand impact — at a glance.
+Runs 100% locally. No API calls, no accounts, no tokens.
 
 ![DepsView — collapsed view](https://raw.githubusercontent.com/jo050493/DepsView/master/media/readme/collapsed.png)
 
@@ -45,11 +46,11 @@ Circular dependencies (CYCLE badge), phantom imports (missing files), shadow imp
 ### Impact radius
 Hover any file to see impact rings: which files break if you modify it. Three levels: direct (red), indirect (orange), far (yellow).
 
-### Context Bridge
-One-click copy of architectural context. Generate a diagnostic report or a ready-to-share summary for any issue.
+### Context Bridge *(optional)*
+One-click copy of architectural context. Generate a diagnostic report or a ready-to-share summary for any issue. If you paste it into an assistant, token usage stays on your side — DepsView never leaves your machine.
 
-### MCP Server
-Query your architecture programmatically. Works with any MCP-compatible client — no copy-paste needed.
+### MCP Server *(optional)*
+Query your architecture programmatically from any MCP-compatible client. DepsView itself makes no API calls; token usage is handled entirely by your own client.
 
 ### Export PNG
 High-resolution 2x retina export for docs, PRs, and architecture reviews.
@@ -98,6 +99,8 @@ npx depsview scan /path/to/project -o graph.json
 ## MCP Server
 
 Expose architectural data to any MCP-compatible client.
+
+> **Optional — the extension works fully without it.** DepsView never makes API calls; when you connect a client, all token usage is handled by your provider.
 
 **Claude Code** (`.claude/settings.json`):
 ```json
