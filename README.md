@@ -9,7 +9,7 @@ See your architecture, detect issues, and understand impact — at a glance.
 
 ## Why DepsView?
 
-AI coding tools generate code fast, but they don't see your architecture. They create phantom imports, circular dependencies, and tightly-coupled modules — and you won't notice until the project breaks.
+Codebases grow fast. Broken imports, circular dependencies, and tightly-coupled modules slip in before anyone notices — and by the time you spot them, the refactor is painful.
 
 DepsView gives you a **live architectural map** that updates in real-time as files change. You see what's connected, what's broken, and what's at risk — at a glance.
 
@@ -37,19 +37,19 @@ Click any file or folder to isolate its connections. Toggle depth 1 (direct) or 
 | ![Focus depth 1](https://raw.githubusercontent.com/jo050493/DepsView/master/media/readme/focus%201.png) | ![Focus depth 2](https://raw.githubusercontent.com/jo050493/DepsView/master/media/readme/focus%202.png) |
 
 ### Real-time heatmap
-Recently modified files pulse with heat animations. See what the AI is touching right now.
+Recently modified files pulse with heat animations. Spot activity as it happens, across the whole graph.
 
 ### Architectural detections
-Circular dependencies (CYCLE badge), phantom imports (missing files), shadow imports (AI hallucinations), orphan files, excessive coupling.
+Circular dependencies (CYCLE badge), phantom imports (missing files), shadow imports (invalid references), orphan files, excessive coupling.
 
 ### Impact radius
 Hover any file to see impact rings: which files break if you modify it. Three levels: direct (red), indirect (orange), far (yellow).
 
 ### Context Bridge
-One-click copy of architectural context optimized for LLM prompts. Generate a diagnostic report or copy a fix prompt for any issue.
+One-click copy of architectural context. Generate a diagnostic report or a ready-to-share summary for any issue.
 
 ### MCP Server
-AI assistants query your architecture directly. No copy-paste needed.
+Query your architecture programmatically. Works with any MCP-compatible client — no copy-paste needed.
 
 ### Export PNG
 High-resolution 2x retina export for docs, PRs, and architecture reviews.
@@ -97,7 +97,7 @@ npx depsview scan /path/to/project -o graph.json
 
 ## MCP Server
 
-Give your AI assistant direct access to architectural data.
+Expose architectural data to any MCP-compatible client.
 
 **Claude Code** (`.claude/settings.json`):
 ```json
